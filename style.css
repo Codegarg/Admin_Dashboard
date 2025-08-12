@@ -1,0 +1,237 @@
+:root {
+    --sidebar-bg: #1e3a8a;
+    --sidebar-color: #f1f5f9;
+    --header-bg: #ffffff;
+    --main-bg: #e2e8f0;
+    --text-color-dark: #334155;
+    --text-color-light: #64748b;
+    --card-bg: #ffffff;
+    --card-border: #f59e0b;
+    --button-bg: #22c55e;
+    --button-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 150px 1fr;
+    height: 100vh;
+}
+
+/* Sidebar Styling & Grid */
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-color);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Branding, Navigation, Settings */
+    gap: 30px;
+}
+
+.sidebar a {
+    color: var(--sidebar-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar img {
+    height: 24px;
+    filter: invert(100%);
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navigation ul, .settings-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+}
+
+/* Header Styling & Grid */
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: var(--header-bg);
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 10px 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar img {
+    height: 24px;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    background-color: var(--main-bg);
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.user-info img {
+    height: 24px;
+}
+
+.avatar {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-large {
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header-buttons button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Main Content Styling & Grid */
+.main-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: var(--main-bg);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.projects h3, .announcements h3, .trending h3 {
+    margin-bottom: 10px;
+    color: var(--text-color-dark);
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-left: 8px solid var(--card-border);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 200px;
+}
+
+.card h4 {
+    margin-top: 0;
+}
+
+.card p {
+    color: var(--text-color-light);
+}
+
+.card-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.card-icons img {
+    height: 24px;
+}
+
+.announcements-trending {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.announcements-card, .trending-cards {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.announcement-item {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.announcement-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.trending-item .avatar {
+    height: 48px;
+}
+
+.trending-info p:first-child {
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.trending-info p:last-child {
+    color: var(--text-color-light);
+    margin: 0;
+}
